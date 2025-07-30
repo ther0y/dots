@@ -1,0 +1,14 @@
+(include "./eww-bar/eww.yuck")
+
+(defwindow example
+           :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "-16px"
+                               :width "98%"
+                               :height "28px"
+                               :anchor "bottom center")
+           :stacking "fg"
+           :reserve (struts :distance "32px" :side "bottom")
+           :windowtype "dock"
+           :wm-ignore false
+  (bar))

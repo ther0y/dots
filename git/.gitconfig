@@ -1,0 +1,33 @@
+[user]
+	name = Masood Rezazadeh
+	email = rezazadehmasood@gmail.com
+
+[merge]
+    tool = nvimdiff
+    conflictstyle = diff3
+
+[mergetool "nvimdiff"]
+    cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[diff]
+    tool = nvimdiff
+    colorMoved = default
+
+[core]
+    pager = delta
+
+[delta]
+    navigate = true
+    light = false
+    side-by-side = true
+    line-numbers = true
+    syntax-theme = gruvbox-dark
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-style = file line-number syntax
+
+[includeIf "gitdir:~/Developer/global/"]
+    path = ~/Developer/global/.gitconfig
+
+[includeIf "gitdir:~/Developer/github/"]
+    path = ~/Developer/github/.gitconfig

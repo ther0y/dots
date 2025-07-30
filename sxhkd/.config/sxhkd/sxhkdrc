@@ -1,0 +1,27 @@
+alt + shift + control + p
+    dmenu_run
+
+alt + shift + control + h
+    kitty --title htop-flt htop
+
+
+alt + shift + control + d
+    kitty --title lazydocker-flt lazydocker
+
+
+alt + shift + control + y
+    kitty --title yazi-flt yazi
+
+
+alt + shift + control + g
+    kitty --title lazygit-flt lazygit
+
+
+alt + shift + control + b
+    kitty --title btop-flt btop
+
+alt + shift + control + n
+    kitty --title nvtop-flt nvtop
+
+alt + shift + control + v
+    kitty --title nvidia-smi-flt bash -c "nvidia-smi; read -p 'Press Enter to close...'"

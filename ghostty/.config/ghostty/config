@@ -1,0 +1,83 @@
+# This is the configuration file for Ghostty.
+#
+# This template file has been automatically created at the following
+# path since Ghostty couldn't find any existing config files on your system:
+#
+#   /Users/masood/Library/Application Support/com.mitchellh.ghostty/config
+#
+# The template does not set any default options, since Ghostty ships
+# with sensible defaults for all options. Users should only need to set
+# options that they want to change from the default.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+# font-family = Iosevka
+# window-padding-x = 2
+#
+# # Spacing around the equals sign does not matter.
+# # All of these are identical:
+# key=value
+# key= value
+# key =value
+# key = value
+#
+# # Any line beginning with a # is a comment. It's not possible to put
+# # a comment after a config option, since it would be interpreted as a
+# # part of the value. For example, this will have a value of "#123abc":
+# background = #123abc
+#
+# # Empty values are used to reset config keys to default.
+# key =
+#
+# # Some config options have unique syntaxes for their value,
+# # which is explained in the docs for that config option.
+# # Just for example:
+# resize-overlay-duration = 4s 200ms
+
+theme = catppuccin-mocha
+
+font-family = CaskadyaCove Nerd Font Mono
+font-size = 18
+
+background-opacity = 0.9
+background-blur-radius = 40
+
+keybind = global:cmd+alt+enter=toggle_quick_terminal
+
+macos-option-as-alt = left
+
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+
+
+# Position the quick terminal in the center of the screen.
+# Other options: top, bottom, left, right.
+quick-terminal-position = center
+
+# Optional: Set the screen it appears on (default is "main", which is usually fine).
+# Other options: mouse, macos-menu-bar (macOS-specific).
+quick-terminal-screen = main
+
+# Optional: Control animation duration (in seconds; set to 0 to disable).
+quick-terminal-animation-duration = 0.1
+
+# Optional: Auto-hide when focus shifts to another window (default: true).
+quick-terminal-autohide = true
+
+# Optional: macOS-specific space behavior (if using multiple desktops/spaces).
+# Other options: remain.
+quick-terminal-space-behavior = move
+
+# Bind a key to toggle the quick terminal (replace with your preferred combo).
+# Example: Super (Windows/Command) + Grave (`) key.
+# List all available actions with: ghostty +list-actions
+# List default keybinds with: ghostty +list-keybinds
+# keybind = super+grave:toggle_quick_terminal
