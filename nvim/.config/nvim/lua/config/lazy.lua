@@ -51,3 +51,10 @@ require("lazy").setup({
     },
   },
 })
+
+require("neopywal").setup({
+  use_wallust = true,
+  colorscheme_file = "~/.cache/colors.vim",
+  custom_colors = {},
+})
+vim.cmd.colorscheme("neopywal")

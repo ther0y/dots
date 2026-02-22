@@ -1,3 +1,4 @@
+config-file = themes/wal
 # This is the configuration file for Ghostty.
 #
 # This template file has been automatically created at the following
@@ -42,13 +43,28 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-theme = catppuccin-mocha
+# notify-on-command-finish = never
+desktop-notifications = false
 
-font-family = CaskadyaCove Nerd Font Mono
-font-size = 18
 
-background-opacity = 0.9
-background-blur-radius = 40
+command = /usr/bin/fish --login --interactive
+
+font-family = "JetBrainsMono Nerd Font"
+font-size = 14
+
+# Standard Ligatures (Enabled by default, but good to be explicit)
+font-feature = calt, liga, dlig
+
+# Stylistic Sets (The "Hidden" Ligatures)
+font-feature = "ss01"  # Enables '!=' and '===' variants
+font-feature = "ss02"  # Enables '<=' and '>=' (Greater/Less than or equal)
+font-feature = "ss03"  # Enables '->', '=>', and '~>' (Arrows)
+font-feature = "ss04"  # Enables '<>' and '</>' (HTML/XML tags)
+font-feature = "ss19"  # Enables '0' (Slashed zero)
+font-feature = "ss20"  # Enables 'g' (Control of the double-story 'g')
+
+background-opacity = 0.8
+background-blur-radius = 20
 
 keybind = global:cmd+alt+enter=toggle_quick_terminal
 
@@ -75,6 +91,8 @@ quick-terminal-autohide = true
 # Optional: macOS-specific space behavior (if using multiple desktops/spaces).
 # Other options: remain.
 quick-terminal-space-behavior = move
+
+bell-features = no-system
 
 # Bind a key to toggle the quick terminal (replace with your preferred combo).
 # Example: Super (Windows/Command) + Grave (`) key.

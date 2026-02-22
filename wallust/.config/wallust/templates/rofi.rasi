@@ -1,0 +1,25 @@
+/**
+ * Wallust Rofi Theme - Optimized for Contrast
+ **/
+
+* {
+    /* Background with 80% opacity for better readability */
+    background:     {{background}}CC;
+    
+    /* Use a slightly lighter/darker version of background for search bar */
+    background-alt: {{background | lighten(0.05)}}FF;
+    
+    /* Main text color */
+    foreground:     {{foreground}}FF;
+    
+    /* Use your most vibrant color (color6) for selection */
+    selected:       {{color6}}FF;
+    
+    /* The color of the text when highlighted (should be opposite of 'selected') */
+    /* This ensures you can read the text on the selection bar! */
+    highlight-text: {{background}}FF;
+
+    /* Active & Urgent */
+    active:         {{color4}}FF;
+    urgent:         {{color1}}FF;
+}

@@ -1,0 +1,149 @@
+@import "colors.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Adwita Sans", "JetBrainsMono Nerd Font Propo", sans-serif;
+    min-width: 0px;
+    padding: 0;
+    margin: 0;
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+window#waybar {
+    background: alpha(@background, 0.9);
+    min-width: 0px;
+    /* background: transparent; */
+}
+
+tooltip {
+    background: @background;
+    border: 1px solid @color3;
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: @foreground;
+    padding: 6px;
+}
+
+#workspaces {
+    padding: 5px 3px;
+    margin: 0px 0 0 0;
+    border-radius: 8px;
+    color: @foreground;
+}
+
+#workspaces button {
+    margin: 4px 0;
+    border-radius: 2px;
+    color: alpha(@foreground, 0);
+    background: alpha(lighter(@color4), 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    background: @color6; /* Use your brightest color for active */
+    transition: all 0.3s ease-in-out;
+    color: @backgroundMain; /* Dark text on bright background */
+    min-height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#workspaces button:hover {
+    background: @color1;
+    color: @background;
+    min-height: 30px;
+    background-size: 400% 400%;
+}
+
+#workspaces button.urgent {
+    background: @red;
+    color: @background;
+    border-radius: 8px;
+    min-height: 50px;
+    background-size: 400% 400%;
+    transition: all 0.3s ease-in-out;
+}
+
+#language,
+#pulseaudio,
+#custom-notification,
+#network {
+    background: @background;
+    padding: 8px 0;
+    margin: 4px 0 0 0;
+    border-radius: 8px;
+}
+
+#clock {
+    background: alpha(@backgroundMain, 0.6);
+    color: @color6;
+}
+
+#custom-notification {
+    color: @foreground;
+}
+
+#pulseaudio {
+    color: @color2;
+}
+
+#network {
+    color: @color4;
+}
+
+#language {
+    color: @color5;
+}
+
+#clock {
+    border-radius: 8px;
+    padding: 0 4px;
+}
+
+#clock.hour,
+#clock.date,
+#clock.month,
+#clock.sep {
+    color: alpha(@foreground, 0.8);
+    border-radius: 0px;
+    font-size: 24px;
+}
+
+#clock.hour {
+    padding-top: 12px;
+    margin-top: 12px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border: 1px solid alpha(lighter(@color4), 0.3);
+    border-bottom: none;
+    color: @color6;
+}
+
+#clock.date {
+    font-size: 18px;
+    border: 1px solid alpha(lighter(@color4), 0.3);
+    border-top: none;
+    border-bottom: none;
+    font-size: 24px;
+}
+
+#clock.sep {
+    font-size: 24px;
+}
+
+
+#clock.month {
+    color: @color4;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border: 1px solid alpha(lighter(@color4), 0.3);
+    border-top: none;
+}

@@ -1,0 +1,114 @@
+/* Catppuccin Mocha Palette Definitions */
+@define-color base      #1e1e2e;
+@define-color mantle    #181825;
+@define-color crust     #11111b;
+@define-color text      #cdd6f4;
+@define-color subtext0  #a6adc8;
+@define-color surface0  #313244;
+@define-color surface1  #45475a;
+
+/* Accent Colors */
+@define-color color6    #74c7ec; /* Sapphire */
+@define-color blue      #89b4fa;
+@define-color red       #f38ba8;
+@define-color yellow    #f9e2af;
+
+/* Mapping variables to your specific config */
+@define-color background @crust;
+@define-color foreground @text;
+@define-color active     @color6;
+
+
+* {
+    border: none;
+    border-radius: 8;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "JetBrainsMono Nerd Font";
+    min-width: 24px;
+}
+
+/* Change icon size for specific modules */
+#network,
+#bluetooth,
+#cpu,
+#memory,
+#temperature,
+#custom-notification,
+#custom-pacman,
+#custom-expand {
+    font-size: 24px;
+    /* or whatever size you want */
+}
+
+window#waybar {
+    background: @background;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#clock.hour {
+    margin-top: 16px;
+    padding-top: 16px;
+    font-size: 18px;
+}
+
+#clock.hour,
+#clock.date,
+#clock.month,
+#clock.sep {
+    color: @foreground;
+    border-radius: 0px;
+}
+
+#clock.date {
+    font-size: 18px;
+}
+
+#clock.sep {
+    font-size: 14px;
+}
+
+
+#clock.month {
+    font-size: 12px;
+    font-weight: bold;
+    padding-bottom: 16px;
+}
+
+#language, #network, #custom-notification, #pulseaudio {
+    margin-bottom: 16px;
+}
+
+#language {
+    background: @background;
+    padding: 6px 0;
+    margin: 0px 3px 16px 3px;
+    font-size: 14pt;
+}
+
+#pulseaudio {
+    color: @foreground;
+    background: transparent;
+}
+
+#pulseaudio.muted {}
+
+
+#tray {
+    transition: none;
+    color: @foreground;
+    background: transparent;
+}
+
+#custom.gap {
+    margin-top: 10px;
+    min-height: 30px;
+    margin-bottom: 20px;
+}
+
+#custom-notification {
+    color: @foreground;
+}
+

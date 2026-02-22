@@ -1,0 +1,32 @@
+# Ghostty Wallust Theme
+background = #0E0E0F
+foreground = #F5F4F5
+
+# Selection - Inverted for maximum visibility
+selection-background = #F5F4F5
+selection-foreground = #0E0E0F
+
+# Cursor - Using Magenta/Purple for a RobCo look
+cursor-color = #E27BE2
+cursor-text = #0E0E0F
+
+# Split Dividers
+split-divider-color = #A2A2A2
+
+# The 16-Color Palette
+palette = 0=#39393A
+palette = 1=#43677F
+palette = 2=#456382
+palette = 3=#55559D
+palette = 4=#6969C0
+palette = 5=#E27BE2
+palette = 6=#E27BE2
+palette = 7=#E8E7E8
+palette = 8=#A2A2A2
+palette = 9=#43677F
+palette = 10=#456382
+palette = 11=#55559D
+palette = 12=#6969C0
+palette = 13=#E27BE2
+palette = 14=#E27BE2
+palette = 15=#E8E7E8
