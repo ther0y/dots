@@ -45,16 +45,9 @@ require("lazy").setup({
         -- "netrwPlugin",
         "tarPlugin",
         "tohtml",
-        -- "tutor",
+        "tutor",
         "zipPlugin",
       },
     },
   },
 })
-
-require("neopywal").setup({
-  use_wallust = true,
-  colorscheme_file = "~/.cache/colors.vim",
-  custom_colors = {},
-})
-vim.cmd.colorscheme("neopywal")

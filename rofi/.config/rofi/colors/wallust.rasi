@@ -4,22 +4,22 @@
 
 * {
     /* Background with 80% opacity for better readability */
-    background:     #0E0E0FCC;
+    background:     #131311CC;
     
     /* Use a slightly lighter/darker version of background for search bar */
-    background-alt: #1A1A1BFF;
+    background-alt: #1F1F1DFF;
     
     /* Main text color */
-    foreground:     #F5F4F5FF;
+    foreground:     #FEF1DEFF;
     
     /* Use your most vibrant color (color6) for selection */
-    selected:       #E27BE2FF;
+    selected:       #FBBB58FF;
     
     /* The color of the text when highlighted (should be opposite of 'selected') */
     /* This ensures you can read the text on the selection bar! */
-    highlight-text: #0E0E0FFF;
+    highlight-text: #131311FF;
 
     /* Active & Urgent */
-    active:         #6969C0FF;
-    urgent:         #43677FFF;
+    active:         #DA3E8DFF;
+    urgent:         #2D72B0FF;
 }

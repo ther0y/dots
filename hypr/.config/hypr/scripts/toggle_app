@@ -1,0 +1,21 @@
+#!/bin/bash
+
+WORKSPACE_NAME="$1"
+SEARCH_TERM="$2"
+RUN_COMMAND="$3"
+
+if ! hyprctl clients | grep -iE "(title|class): .*${SEARCH_TERM}" >/dev/null; then
+  hyprctl dispatch exec "[workspace special:${WORKSPACE_NAME} silent] ${RUN_COMMAND}"
+
+  for i in {1..50}; do
+    if hyprctl clients | grep -iE "(title|class): .*${SEARCH_TERM}" >/dev/null; then
+      break
+    fi
+    sleep 0.1
+  done
+fi
+
+hyprctl dispatch togglespecialworkspace "${WORKSPACE_NAME}"
+
+sleep 0.05
+hyprctl dispatch focuswindow "${SEARCH_TERM}"

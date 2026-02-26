@@ -1,3 +1,4 @@
+
 /**
  *
  * Author : Aditya Shakya (adi1090x)
@@ -7,7 +8,9 @@
  * Rofi Version: 1.7.3
  **/
 
+
 /*****----- Configuration -----*****/
+@import "~/.config/rofi/colors/wallust.rasi"
 configuration {
     show-icons:                 false;
 }
@@ -15,12 +18,13 @@ configuration {
 /*****----- Global Properties -----*****/
 * {
     font:                        "JetBrains Mono Nerd Font 10";
-    background:                  #11092D;
-    background-alt:              #281657;
-    foreground:                  #FFFFFF;
-    selected:                    #DF5296;
-    active:                      #6E77FF;
-    urgent:                      #8E3596;
+    //background:                  #11092D;
+    //background-alt:              #281657;
+    //foreground:                  #FFFFFF;
+    //selected:                    #DF5296;
+    //active:                      #6E77FF;
+    //urgent:                      #8E3596;
+    
 }
 
 /*

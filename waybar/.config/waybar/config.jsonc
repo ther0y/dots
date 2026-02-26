@@ -5,17 +5,18 @@
         "clock#hour",
         "clock#date",
         "clock#month",
+        "clock#day",
         "hyprland/workspaces"
     ],
     "modules-center": [
         "tray"
     ],
     "modules-right": [
+        "custom/updates",
         "hyprland/language",
         "pulseaudio",
         "custom/notification",
         "network",
-        "custom/updates",
         "custom/github",
         "custom/weather",
         "custom/colorpicker",
@@ -43,6 +44,11 @@
         "tooltip": false,
         "refresh-interval": 60
     },
+    "clock#day": {
+        "format": "{:%a}",
+        "tooltip": false,
+        "refresh-interval": 60
+    },
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
@@ -60,10 +66,11 @@
     },
     "hyprland/language": {
         "format": "{}",
+        "format-icon": "󰌌",
         "format-en": "US",
         "format-fa": "FA",
-        "keyboard-name": "logitech-craft",
-        "on-click": "hyprctl switchxkblayout logitech-craft next"
+        "keyboard-name": "kanata",
+        "on-click": "hyprctl switchxkblayout kanata next"
     },
     "pulseaudio": {
         "format": "<span size='11pt'>{icon}</span>\n{volume}",
@@ -124,5 +131,12 @@
     "tray": {
         "icon-size": 18,
         "spacing": 10
+    },
+    "custom/updates": {
+        "format": "<span size='18pt'>󰏕</span>\n{}",
+        "interval": 10800,
+        "exec": "~/.config/waybar/scripts/checkupdates",
+        "return-type": "json", // این خط حیاتی است
+        "signal": 8
     }
 }

@@ -1,14 +1,13 @@
 filter = "vibrant"     # or "nord", "vibrant"
 check_contrast = true
 saturation = 45 # A little more "pop" for the G502 X aesthetic
-threshold = 30  # Adding a threshold prevents colors from getting too dark
 
 [templates]
 kitty = { template = "kitty.conf", target = "~/.config/kitty/conf.d/colors.conf" }
 ghostty = { template = "ghostty", target = "~/.config/ghostty/themes/wal" }
 rofi = { template = "rofi.rasi", target = "~/.config/rofi/colors/wallust.rasi" }
 vim = { template = "colors.vim", target = "~/.cache/colors.vim" }
-nvim = { template = "colors.vim", target = "~/.cache/wal/colors-wal.vim" }
+nvim = { template = "neopywal.vim", target = "~/.cache/wallust/colors_neopywal.vim" }
 waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
 xres = { template = "Xresources", target = "~/.config/x/Xresources.d/colors" }
 yazi = { template = "yazi.toml", target = "~/.config/yazi/theme.toml" }

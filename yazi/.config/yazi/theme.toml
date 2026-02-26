@@ -1,89 +1,89 @@
 "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
 
 [manager]
-# cwd = { fg = "#43677F" }
+# cwd = { fg = "#2D72B0" }
 #
-# hovered         = { fg = "#43677F", bg = "#0E0E0F", bold = true, underline = true }
+# hovered         = { fg = "#2D72B0", bg = "#131311", bold = true, underline = true }
 # preview_hovered = { underline = true }
 #
-# find_keyword  = { fg = "#456382", italic = true }
-# find_position = { fg = "#55559D", bg = "reset", italic = true }
+# find_keyword  = { fg = "#B45E28", italic = true }
+# find_position = { fg = "#569144", bg = "reset", italic = true }
 #
-# marker_selected = { fg = "#456382", bg = "#456382" }
-# marker_copied   = { fg = "#456382", bg = "#456382" }
-# marker_cut      = { fg = "#43677F", bg = "#43677F" }
+# marker_selected = { fg = "#B45E28", bg = "#B45E28" }
+# marker_copied   = { fg = "#B45E28", bg = "#B45E28" }
+# marker_cut      = { fg = "#2D72B0", bg = "#2D72B0" }
 #
-# tab_active   = { fg = "#0E0E0F", bg = "#A2A2A2" }
-# tab_inactive = { fg = "#A2A2A2", bg = "#0E0E0F" }
+# tab_active   = { fg = "#131311", bg = "#AB9F8B" }
+# tab_inactive = { fg = "#AB9F8B", bg = "#131311" }
 # tab_width    = 1
 #
-border_style  = { fg = "#E27BE2" }
+border_style  = { fg = "#FBBB58" }
 
 [status]
 separator_open  = ""
 separator_close = ""
-separator_style = { fg = "#0E0E0F", bg = "#0E0E0F" }
+separator_style = { fg = "#131311", bg = "#131311" }
 
-mode_normal = { fg = "#0E0E0F", bg = "#43677F", bold = true }
-mode_select = { fg = "#0E0E0F", bg = "#456382", bold = true }
-# mode_unset  = { fg = "#0E0E0F", bg = "#E27BE2", bold = true }
+mode_normal = { fg = "#131311", bg = "#2D72B0", bold = true }
+mode_select = { fg = "#131311", bg = "#B45E28", bold = true }
+# mode_unset  = { fg = "#131311", bg = "#8A72E3", bold = true }
 #
-# progress_label  = { fg = "#F5F4F5", bold = true }
-# progress_normal = { fg = "#A2A2A2", bg = "#0E0E0F" }
-# progress_error  = { fg = "#43677F", bg = "#0E0E0F" }
+# progress_label  = { fg = "#FEF1DE", bold = true }
+# progress_normal = { fg = "#AB9F8B", bg = "#131311" }
+# progress_error  = { fg = "#2D72B0", bg = "#131311" }
 #
-# permissions_t = { fg = "#A2A2A2" }
-# permissions_r = { fg = "#456382" }
-# permissions_w = { fg = "#43677F" }
-# permissions_x = { fg = "#456382" }
-# permissions_s = { fg = "#A2A2A2" }
+# permissions_t = { fg = "#AB9F8B" }
+# permissions_r = { fg = "#B45E28" }
+# permissions_w = { fg = "#2D72B0" }
+# permissions_x = { fg = "#B45E28" }
+# permissions_s = { fg = "#AB9F8B" }
 
 # [input]
-# border   = { fg = "#456382" }
+# border   = { fg = "#B45E28" }
 # title    = {}
 # value    = {}
 # selected = { reversed = true }
 #
 # [select]
-# border   = { fg = "#A2A2A2" }
-# active   = { fg = "#55559D" }
+# border   = { fg = "#AB9F8B" }
+# active   = { fg = "#569144" }
 # inactive = {}
 #
 # [tasks]
-# border  = { fg = "#A2A2A2" }
+# border  = { fg = "#AB9F8B" }
 # title   = {}
 # hovered = { underline = true }
 #
 # [which]
-# mask            = { bg = "#0E0E0F" }
-# cand            = { fg = "#F5F4F5" }
-# rest            = { fg = "#A2A2A2" }
-# desc            = { fg = "#55559D" }
+# mask            = { bg = "#131311" }
+# cand            = { fg = "#FEF1DE" }
+# rest            = { fg = "#AB9F8B" }
+# desc            = { fg = "#569144" }
 # separator       = "  "
-# separator_style = { fg = "#A2A2A2" }
+# separator_style = { fg = "#AB9F8B" }
 #
 # [help]
-# on      = { fg = "#55559D" }
-# exec    = { fg = "#F5F4F5" }
-# desc    = { fg = "#A2A2A2" }
-# hovered = { bg = "#A2A2A2", bold = true }
-# footer  = { fg = "#0E0E0F", bg = "#A2A2A2" }
+# on      = { fg = "#569144" }
+# exec    = { fg = "#FEF1DE" }
+# desc    = { fg = "#AB9F8B" }
+# hovered = { bg = "#AB9F8B", bold = true }
+# footer  = { fg = "#131311", bg = "#AB9F8B" }
 #
 # [filetype]
 # rules = [
-#     { mime = "image/*", fg = "#E27BE2" },
+#     { mime = "image/*", fg = "#8A72E3" },
 #
-#     { mime = "video/*", fg = "#6969C0" },
-#     { mime = "audio/*", fg = "#456382" },
+#     { mime = "video/*", fg = "#DA3E8D" },
+#     { mime = "audio/*", fg = "#B45E28" },
 #
-#     { mime = "application/zip",             fg = "#55559D" },
-#     { mime = "application/gzip",            fg = "#55559D" },
-#     { mime = "application/x-tar",           fg = "#55559D" },
-#     { mime = "application/x-bzip",          fg = "#55559D" },
-#     { mime = "application/x-bzip2",         fg = "#55559D" },
-#     { mime = "application/x-7z-compressed", fg = "#55559D" },
-#     { mime = "application/x-rar",           fg = "#55559D" },
+#     { mime = "application/zip",             fg = "#569144" },
+#     { mime = "application/gzip",            fg = "#569144" },
+#     { mime = "application/x-tar",           fg = "#569144" },
+#     { mime = "application/x-bzip",          fg = "#569144" },
+#     { mime = "application/x-bzip2",         fg = "#569144" },
+#     { mime = "application/x-7z-compressed", fg = "#569144" },
+#     { mime = "application/x-rar",           fg = "#569144" },
 #
-#     { name = "*", fg = "#6969C0" },
-#     { name = "*/", fg = "#F5F4F5" }
+#     { name = "*", fg = "#DA3E8D" },
+#     { name = "*/", fg = "#FEF1DE" }
 # ]

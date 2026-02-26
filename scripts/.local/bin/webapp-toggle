@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+RAW_URL="$1"
+
+[ -z "$RAW_URL" ] && exit 0
+
+# اگر jq نصب نیست، فقط لانچ کن
+if ! command -v jq >/dev/null 2>&1; then
+  webapp-launch "$RAW_URL"
+  exit 0
+fi
+
+# پروتکل را حذف کن
+if [[ "$RAW_URL" == http*://* ]]; then
+  tmp="${RAW_URL#*://}"
+else
+  tmp="$RAW_URL"
+fi
+
+# هر چیزی بعد از # را حذف کن
+tmp="${tmp%%#*}"
+
+# دامنه را جدا کن، قبل از اولین / یا ?
+# مثال ها
+#   chat.google.com/u/1         می‌شود chat.google.com
+#   www.youtube.com?x_as_app=1  می‌شود www.youtube.com
+#   chatgpt.com                 همان chatgpt.com
+domain="${tmp%%[/?]*}"
+
+class_prefix="chrome-$domain"
+
+WINDOW=$(
+  hyprctl clients -j |
+    jq -r --arg prefix "$class_prefix" '
+      map(
+        select(
+          ((.class // "")        | startswith($prefix))
+          or
+          ((.initialClass // "") | startswith($prefix))
+        )
+      )
+      | .[0].address // empty
+    '
+)
+
+if [ -n "$WINDOW" ]; then
+  # 1. Get current active window address
+  ACTIVE_ADDR=$(hyprctl activewindow -j | jq -r '.address // empty')
+
+  if [ "$ACTIVE_ADDR" = "$WINDOW" ]; then
+    # 2. Find the workspace NAME for this specific window
+    # We strip the 'special:' prefix because the dispatcher doesn't want it
+    WS_NAME=$(hyprctl clients -j | jq -r --arg addr "$WINDOW" '.[] | select(.address == $addr) | .workspace.name' | sed 's/special://')
+
+    # 3. Toggle that specific workspace to hide it
+    hyprctl dispatch togglespecialworkspace "$WS_NAME"
+  else
+    # 4. If not focused, focus it (Hyprland will slide the workspace out)
+    hyprctl dispatch focuswindow "address:$WINDOW"
+  fi
+else
+  webapp-launch "$RAW_URL"
+fi

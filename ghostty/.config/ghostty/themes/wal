@@ -1,32 +1,32 @@
 # Ghostty Wallust Theme
-background = #0E0E0F
-foreground = #F5F4F5
+background = #131311
+foreground = #FEF1DE
 
 # Selection - Inverted for maximum visibility
-selection-background = #F5F4F5
-selection-foreground = #0E0E0F
+selection-background = #FEF1DE
+selection-foreground = #131311
 
 # Cursor - Using Magenta/Purple for a RobCo look
-cursor-color = #E27BE2
-cursor-text = #0E0E0F
+cursor-color = #8A72E3
+cursor-text = #131311
 
 # Split Dividers
-split-divider-color = #A2A2A2
+split-divider-color = #AB9F8B
 
 # The 16-Color Palette
-palette = 0=#39393A
-palette = 1=#43677F
-palette = 2=#456382
-palette = 3=#55559D
-palette = 4=#6969C0
-palette = 5=#E27BE2
-palette = 6=#E27BE2
-palette = 7=#E8E7E8
-palette = 8=#A2A2A2
-palette = 9=#43677F
-palette = 10=#456382
-palette = 11=#55559D
-palette = 12=#6969C0
-palette = 13=#E27BE2
-palette = 14=#E27BE2
-palette = 15=#E8E7E8
+palette = 0=#3D3D3B
+palette = 1=#2D72B0
+palette = 2=#B45E28
+palette = 3=#569144
+palette = 4=#DA3E8D
+palette = 5=#8A72E3
+palette = 6=#FBBB58
+palette = 7=#F5E3C7
+palette = 8=#AB9F8B
+palette = 9=#2D72B0
+palette = 10=#B45E28
+palette = 11=#569144
+palette = 12=#DA3E8D
+palette = 13=#8A72E3
+palette = 14=#FBBB58
+palette = 15=#F5E3C7

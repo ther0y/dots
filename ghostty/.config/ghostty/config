@@ -50,7 +50,7 @@ desktop-notifications = false
 command = /usr/bin/fish --login --interactive
 
 font-family = "JetBrainsMono Nerd Font"
-font-size = 14
+font-size = 16
 
 # Standard Ligatures (Enabled by default, but good to be explicit)
 font-feature = calt, liga, dlig
@@ -64,7 +64,7 @@ font-feature = "ss19"  # Enables '0' (Slashed zero)
 font-feature = "ss20"  # Enables 'g' (Control of the double-story 'g')
 
 background-opacity = 0.8
-background-blur-radius = 20
+#background-blur-radius = 20
 
 keybind = global:cmd+alt+enter=toggle_quick_terminal
 
@@ -72,6 +72,9 @@ macos-option-as-alt = left
 
 keybind = alt+left=unbind
 keybind = alt+right=unbind
+keybind = f11=toggle_fullscreen
+
+# custom-shader = ~/.config/ghostty/shaders/fallout.glsl
 
 
 # Position the quick terminal in the center of the screen.

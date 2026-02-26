@@ -1,0 +1,83 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  ins  del
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            rmet ralt  left up   down rght
+  
+  nlck kp/  kp* kp-
+  kp7  kp8  kp9  kp+
+  kp4  kp5  kp6
+  kp1  kp2  kp3  kprt
+  kp0  kp.
+)
+
+(defvar
+  tap-time 200
+  hold-time 200
+)
+
+(defalias
+  util (tap-hold $tap-time $hold-time grv (layer-toggle utility))
+  hyperkey (tap-hold-press $tap-time $hold-time esc (multi lsft lctl lalt lmet))
+  apps (tap-hold $tap-time $hold-time ] (layer-toggle appsLayer))
+)
+
+(deflayer qwerty
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  ins  del
+  @util 1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  _    _    _    _    _    _    _    _    _    _    _    @apps    _
+  @hyperkey _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _             _              @hyperkey _    _    _    _    _
+  
+  XX   _    _    _
+  _    _    _    _
+  _    _    _
+  _    _    _    _
+  _    _
+)
+
+(deflayer utility
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    lrld _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _    _    _
+  
+  _    _    _    _
+  _    _    _    _
+  _    _    _
+  _    _    _    _
+  _    _
+)
+
+(defalias
+  aachat C-A-1
+  aackup C-A-2
+  aagcal C-A-3
+  aaobsd C-A-q
+  aaaiii C-A-w
+)
+
+
+(deflayer appsLayer
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    @aachat  @aackup  @aagcal    _    _    _    _    _    _    _    _    _    _
+  _    @aaobsd  @aaaiii   _    lrld _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _    _    _
+  
+  _    _    _    _
+  _    _    _    _
+  _    _    _
+  _    _    _    _
+  _    _
+)

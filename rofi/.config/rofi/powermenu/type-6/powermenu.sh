@@ -74,7 +74,9 @@ run_cmd() {
       amixer set Master mute
       systemctl suspend
     elif [[ $1 == '--logout' ]]; then
-      if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
+      if [[ "$DESKTOP_SESSION" == 'hyprland' ]] || [[ "$XDG_CURRENT_DESKTOP" == 'Hyprland' ]]; then
+        hyprctl dispatch exit 0
+      elif [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
         openbox --exit
       elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
         bspc quit
@@ -102,10 +104,11 @@ $hibernate)
   run_cmd --hibernate
   ;;
 $lock)
-  if [[ -x '/usr/bin/betterlockscreen' ]]; then
-    betterlockscreen -l
-  elif [[ -x '/usr/bin/i3lock' ]]; then
-    i3lock
+  # این بخش اصلاح شد:
+  if [[ -x '/usr/bin/hyprlock' ]]; then
+    hyprlock
+  elif [[ -x '/usr/bin/loginctl' ]]; then
+    loginctl lock-session
   fi
   ;;
 $suspend)

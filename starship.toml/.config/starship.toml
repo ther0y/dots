@@ -169,39 +169,39 @@ min_time_to_notify = 45000
 [palettes.wallust]
 # SEGMENT 1: OS/Username (Red)
 # We use color1 but ensure it's punchy
-red       = "#215A7F"
+red       = "#1667B0"
 
 # SEGMENT 2: Directory (Peach)
 # We shift hue or lighten color3 to ensure it doesn't bleed into the Red
-peach     = "#4747A7"
+peach     = "#539C3D"
 
 # SEGMENT 3: Git (Yellow)
 # If yellow is too close to peach, we force it to be lighter
-yellow    = "#7777B1"
+yellow    = "#78A769"
 
 # SEGMENT 4: Languages (Green)
 # We use the darker green to contrast against the bright yellow before it
-green     = "#3E5975"
+green     = "#A25524"
 
 # SEGMENT 5: Conda/Docker (Sapphire)
 # Using color4 but shifting it to ensure it sits well next to Green
-sapphire  = "#5454C0"
+sapphire  = "#DA3287"
 
 # SEGMENT 6: Time/Duration (Lavender)
 # We make this the lightest cold color to end the chain
-lavender  = "#7878C6"
+lavender  = "#DE5198"
 
 # TEXT CONTRAST (Crust)
 # To keep text readable inside bars, we use a very dark version of the background
-crust = "#F5F4F5"
+crust = "#FEF1DE"
 
 # REST OF THE PALETTE
-background = "#0E0E0F"
-foreground = "#F5F4F5"
-blue       = "#6969C0"
-cyan       = "#E27BE2"
-magenta    = "#E27BE2"
-white      = "#E8E7E8"
+background = "#131311"
+foreground = "#FEF1DE"
+blue       = "#DA3E8D"
+cyan       = "#FBBB58"
+magenta    = "#8A72E3"
+white      = "#F5E3C7"
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"

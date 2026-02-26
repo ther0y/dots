@@ -15,6 +15,7 @@
 
 [core]
     pager = delta
+	excludesfile = /home/masood/.gitignore_global
 
 [delta]
     navigate = true
@@ -26,8 +27,8 @@
     file-decoration-style = none
     hunk-header-style = file line-number syntax
 
-[includeIf "gitdir:~/Developer/global/"]
-    path = ~/Developer/global/.gitconfig
+[includeIf "gitdir:~/projects/global/"]
+    path = ~/projects/global/.gitconfig
 
-[includeIf "gitdir:~/Developer/github/"]
-    path = ~/Developer/github/.gitconfig
+[includeIf "gitdir:~/projects/github/"]
+    path = ~/projects/github/.gitconfig
