@@ -1,24 +1,24 @@
 /* wallust template: waybar.css */
-@define-color background rgba(19,19,17, 0.4);
-@define-color foreground #FEF1DE;
-@define-color accent     #FBBB58;
-@define-color text-main  #FEF1DE; /* This is the fix */
-@define-color color1     #2D72B0;
-@define-color color6     #FBBB58;
-@define-color color5     #8A72E3;
-@define-color color4     #DA3E8D;
-@define-color color3     #569144;
-@define-color color2     #B45E28;
-@define-color color7     #F5E3C7;
-@define-color color8     #AB9F8B;
-@define-color color9     #2D72B0;
-@define-color color10    #B45E28;
-@define-color color11    #569144;
-@define-color color12    #DA3E8D;
-@define-color color13    #8A72E3;
-@define-color active     #FBBB58;
-@define-color red        #2D72B0;
-@define-color yellow     #569144;
+@define-color background rgba(19,18,22, 0.4);
+@define-color foreground #FDEAF8;
+@define-color accent     #F86BD6;
+@define-color text-main  #FDEAF8; /* This is the fix */
+@define-color color1     #842920;
+@define-color color6     #F86BD6;
+@define-color color5     #1FBFC5;
+@define-color color4     #7544A1;
+@define-color color3     #0E7FCD;
+@define-color color2     #7D25E5;
+@define-color color7     #F3D8ED;
+@define-color color8     #AA97A6;
+@define-color color9     #842920;
+@define-color color10    #7D25E5;
+@define-color color11    #0E7FCD;
+@define-color color12    #7544A1;
+@define-color color13    #1FBFC5;
+@define-color active     #F86BD6;
+@define-color red        #842920;
+@define-color yellow     #0E7FCD;
 
 
-@define-color backgroundMain #131311;
+@define-color backgroundMain #131216;

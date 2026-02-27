@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+TARGET_SESSION="$1"
+CLASS_NAME="robco.terms.main"
+
+if ! hyprctl clients | grep -q "class: $CLASS_NAME"; then
+  hyprctl dispatch exec "[workspace 1 silent] ghostty --class='$CLASS_NAME' -e bash -c 'tmux attach-session -t $TARGET_SESSION || tmux new-session -s $TARGET_SESSION'"
+  sleep 0.5
+else
+
+  hyprctl dispatch focuswindow class:"$CLASS_NAME"
+
+  tmux switch-client -t "$TARGET_SESSION"
+fi

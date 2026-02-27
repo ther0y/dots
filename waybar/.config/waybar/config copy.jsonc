@@ -1,11 +1,12 @@
 {
     "layer": "top",
-    "position": "top",
+    "position": "right",
     "modules-left": [
         "clock#hour",
         "clock#date",
         "clock#month",
-        "clock#day"
+        "clock#day",
+        "hyprland/workspaces"
     ],
     "modules-center": [
         "tray"
@@ -25,7 +26,7 @@
         "custom/hotspot",
     ],
     "clock#hour": {
-        "format": "{:%H:%M}",
+        "format": "{:%H\n%M}",
         "tooltip": false,
         "refresh-interval": 60
     },
@@ -64,7 +65,7 @@
         }
     },
     "hyprland/language": {
-        "format": "󰌌 {}",
+        "format": "{}",
         "format-icon": "󰌌",
         "format-en": "US",
         "format-fa": "FA",
@@ -72,7 +73,7 @@
         "on-click": "hyprctl switchxkblayout kanata next"
     },
     "pulseaudio": {
-        "format": "{icon} {volume}",
+        "format": "<span size='11pt'>{icon}</span>\n{volume}",
         "format-muted": "",
         "format-icons": {
             "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
@@ -99,7 +100,7 @@
         "interface": "eno1",
         "format": "{ifname}",
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "<span >󰈀</span>",
+        "format-ethernet": "<span size='14pt'>󰈀</span>",
         "format-disconnected": "", //An empty format will hide the module.
         "tooltip-format": "{ifname} via {gwaddr} 󰊗",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
@@ -109,7 +110,7 @@
     },
     "custom/notification": {
         "tooltip": true,
-        "format": "{icon}",
+        "format": "<span size='16pt'>{icon}</span>",
         "format-icons": {
             "notification": "󱅫",
             "none": "󰂜",
@@ -128,14 +129,14 @@
         "escape": true
     },
     "tray": {
-        "icon-size": 12,
+        "icon-size": 18,
         "spacing": 10
     },
     "custom/updates": {
-        "format": "󰏕 {}",
+        "format": "<span size='18pt'>󰏕</span>\n{}",
         "interval": 10800,
         "exec": "~/.config/waybar/scripts/checkupdates",
-        "return-type": "json",
+        "return-type": "json", // این خط حیاتی است
         "signal": 8
     }
 }

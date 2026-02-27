@@ -5,6 +5,9 @@ saturation = 45 # A little more "pop" for the G502 X aesthetic
 [templates]
 kitty = { template = "kitty.conf", target = "~/.config/kitty/conf.d/colors.conf" }
 ghostty = { template = "ghostty", target = "~/.config/ghostty/themes/wal" }
+foot = { template = "foot.ini", target = "~/.config/foot/foot.ini"}
+fzf_bash = {template = "fzf_bash", target = "~/.cache/wallust/fzf_bash" }
+fzf_fish = {template = "fzf.fish", target = "~/.config/fish/conf.d/wallust_fzf.fish" }
 rofi = { template = "rofi.rasi", target = "~/.config/rofi/colors/wallust.rasi" }
 vim = { template = "colors.vim", target = "~/.cache/colors.vim" }
 nvim = { template = "neopywal.vim", target = "~/.cache/wallust/colors_neopywal.vim" }

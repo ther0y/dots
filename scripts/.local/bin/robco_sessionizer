@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+selected=$1
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+selected_name=$(basename "$selected" | tr . _)
+
+if ! pgrep tmux > /dev/null; then
+    tmux new-session -ds "$selected_name" -c "$selected"
+    exit 0
+fi
+
+if ! tmux has-session -t="$selected_name" 2> /dev/null; then
+    tmux new-session -ds "$selected_name" -c "$selected"
+fi
+
+echo "$selected_name"

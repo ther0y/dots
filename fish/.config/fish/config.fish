@@ -61,3 +61,5 @@ if status is-interactive
         set -gx (gnome-keyring-daemon --start --components=secrets | string split -m1 '=')
     end
 end
+
+zoxide init fish | source

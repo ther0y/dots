@@ -1,0 +1,42 @@
+#!/bin/bash --norc
+# [[ -f "$HOME/.cache/wallust/fzf_bash" ]] && source "$HOME/.cache/wallust/fzf_bash"
+
+# 1. List generation section (SQLite query + Hyprland clients)
+if [[ "$1" == "--list" ]]; then
+  DB_PATH="$HOME/.config/Cursor/User/globalStorage/state.vscdb"
+
+  # Get currently open Cursor windows from Hyprland
+  hyprctl clients -j | jq -r '.[] | select(.class == "cursor") | .title' 2>/dev/null
+  echo "---"
+
+  # Extract recent folders from Cursor's SQLite database
+  if [[ -f "$DB_PATH" ]]; then
+    sqlite3 "$DB_PATH" "SELECT json_extract(value, '$.entries') FROM ItemTable WHERE key = 'history.recentlyOpenedPathsList'" 2>/dev/null |
+      grep -oP '"folderUri":"file://\K[^"]+' | sed 's/%20/ /g'
+  fi
+  exit 0
+fi
+
+# 2. Main Launcher Logic
+CACHE_FILE="/tmp/robco_cursor_projects.cache"
+SELF=$(realpath "$0")
+
+# Initial cache creation if it doesn't exist
+[[ ! -f "$CACHE_FILE" ]] && $SELF --list >"$CACHE_FILE"
+
+# Launch fzf with the "Robco" style and background reload
+selected=$(cat "$CACHE_FILE" | fzf --prompt="Robco Cursor > " \
+  --border --delimiter '/' --with-nth -1 \
+  --preview 'echo {}' --preview-window=bottom:1:wrap \
+  --bind "start:reload($SELF --list | tee $CACHE_FILE)")
+
+[[ -z "$selected" || "$selected" == "---" ]] && exit 0
+
+# 3. Execution Logic (Focus existing or Open new)
+if [[ "$selected" == *" - Cursor" ]] || [[ "$selected" == *"Cursor"* ]]; then
+  clean_title=$(echo "$selected" | sed 's/ - .*//')
+  hyprctl dispatch focuswindow "title:$clean_title"
+else
+  # Dispatching via hyprctl ensures a clean environment and detachment
+  hyprctl dispatch exec "cursor --new-window '$selected'"
+fi

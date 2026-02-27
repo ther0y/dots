@@ -1,0 +1,40 @@
+#!/bin/bash --norc
+
+if [[ "$1" == "--list" ]]; then
+  source ~/.config/tmux-sessionizer/tmux-sessionizer.conf
+  tmux list-sessions -F "[TMUX] #{session_name}" 2>/dev/null
+  echo "---"
+
+  for entry in "${TS_SEARCH_PATHS[@]}"; do
+    [[ "$entry" =~ ^([^:]+):([0-9]+)$ ]] && {
+      path="${BASH_REMATCH[1]}"
+      depth="${BASH_REMATCH[2]}"
+    } || {
+      path="$entry"
+      depth="${TS_MAX_DEPTH:-1}"
+    }
+    [[ -d "$path" ]] && find "$path" -mindepth 1 -maxdepth "$depth" -path '*/.git' -prune -o -type d -print
+  done
+  exit 0
+fi
+
+source ~/.config/tmux-sessionizer/tmux-sessionizer.conf
+CACHE_FILE="/tmp/robco_tmux_projects.cache"
+SELF=$(realpath "$0")
+
+[[ ! -f "$CACHE_FILE" ]] && $SELF --list >"$CACHE_FILE"
+
+selected=$(cat "$CACHE_FILE" | fzf --prompt="Robco Tmux > " \
+  --border --delimiter '/' --with-nth -1 \
+  --preview 'echo {}' --preview-window=bottom:1:wrap \
+  --bind "start:reload($SELF --list | tee $CACHE_FILE)")
+
+[[ -z "$selected" || "$selected" == "---" ]] && exit 0
+
+if [[ "$selected" =~ ^\[TMUX\]\ (.+)$ ]]; then
+  target_name="${BASH_REMATCH[1]}"
+else
+  target_name=$(~/.local/bin/robco_sessionizer "$selected")
+fi
+
+~/.local/bin/ensure_ghostty "$target_name"

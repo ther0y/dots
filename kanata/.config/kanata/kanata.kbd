@@ -64,14 +64,15 @@
   aagcal C-A-3
   aaobsd C-A-q
   aaaiii C-A-w
+  aadily C-A-d
 )
 
 
 (deflayer appsLayer
   _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    @aachat  @aackup  @aagcal    _    _    _    _    _    _    _    _    _    _
-  _    @aaobsd  @aaaiii   _    lrld _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    @aaobsd  @aaaiii   _  lrld _    _    _    _    _    _    _    _    _
+  _    _    _    @aadily  _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _              _              _    _    _    _    _    _
   
